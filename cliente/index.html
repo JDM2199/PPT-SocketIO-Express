@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto-TPR..Juego de Pie-Pap-Tij..</title>
+    <title>Proyecto-TPR..Juego de Ha-ken-Po..</title>
     <link rel="stylesheet" href="./style.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="./cliente.js"></script>
@@ -15,8 +15,13 @@
 
 <body>
 
-    <h1 class="container py-4 title">Bienvenido al juego Piedra, Papel y Tijera</h1>
+    <h1 class="container py-4 title">Bienvenido al juego Ha Ken Po</h1>
     <div id="initial" class="container col-md-6">
+        <div class="image-row">
+            <img height="200" src="./assets/piedra.svg" class="img-responsive" alt="Piedra">
+            <img height="200" src="./assets/papel.svg" class="img-responsive" alt="Papel">
+            <img height="200" src="./assets/tijera.svg" class="img-responsive" alt="Tijera">
+        </div>
         <button class="form-control btn btn-primary" onclick="createGame()">Crear Juego</button>
         <div class="text-center display-3">o</div>
         <input class="form-control my-2" placeholder="Introducir Codigó" type="text" name="" id="roomUniqueId" />
