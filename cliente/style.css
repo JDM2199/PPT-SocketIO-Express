@@ -140,7 +140,11 @@ img:hover {
 
 .Piedra {
     color: transparent;
+<<<<<<< HEAD
     background: url(./assets/piedra.png);
+=======
+    background: url(./assets/piedra.svg);
+>>>>>>> f9013559a6c03128a31d43bb10beeba1c8917bd9
     background-position: center;
     width: 200px;
     height: 200px;
@@ -149,7 +153,11 @@ img:hover {
 
 .Papel {
     color: transparent;
+<<<<<<< HEAD
     background: url(./assets/papel.png);
+=======
+    background: url(./assets/papel.svg);
+>>>>>>> f9013559a6c03128a31d43bb10beeba1c8917bd9
     background-position: center;
     width: 200px;
     height: 200px;
@@ -158,7 +166,11 @@ img:hover {
 
 .Tijera {
     color: transparent;
+<<<<<<< HEAD
     background: url(./assets/tijeraa.png);
+=======
+    background: url(./assets/tijera.svg);
+>>>>>>> f9013559a6c03128a31d43bb10beeba1c8917bd9
     background-position: center;
     width: 200px;
     height: 200px;
