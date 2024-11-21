@@ -1,5 +1,5 @@
 // Importamos las dependencias necesarias
-const express = require('express'); 
+const express = require('express');
 const app = express();
 const http = require('http');
 const path = require('path');
@@ -29,13 +29,13 @@ io.on('connection', (socket) => {
     socket.on('createGame', () => {
         const roomUniqueId = makeid(6);
         rooms[roomUniqueId] = {};
-        socket.join(roomUniqueId); 
-        socket.emit("newGame", {roomUniqueId: roomUniqueId});
+        socket.join(roomUniqueId);
+        socket.emit("newGame", { roomUniqueId: roomUniqueId });
     });
 
     // Evento para que un jugador se una a una sala existente
     socket.on('joinGame', (data) => {
-        if (rooms[data.roomUniqueId] != null) { 
+        if (rooms[data.roomUniqueId] != null) {
             socket.join(data.roomUniqueId);
             socket.to(data.roomUniqueId).emit("playersConnected", {});
             socket.emit("playersConnected");
@@ -45,7 +45,7 @@ io.on('connection', (socket) => {
     socket.on("p1Choice", (data) => {
         let rpsValue = data.rpsValue;
         rooms[data.roomUniqueId].p1Choice = rpsValue;
-        socket.to(data.roomUniqueId).emit("p1Choice", {rpsValue: data.rpsValue});
+        socket.to(data.roomUniqueId).emit("p1Choice", { rpsValue: data.rpsValue });
         if (rooms[data.roomUniqueId].p2Choice != null) {
             declareWinner(data.roomUniqueId);
         }
@@ -54,7 +54,7 @@ io.on('connection', (socket) => {
     socket.on("p2Choice", (data) => {
         let rpsValue = data.rpsValue;
         rooms[data.roomUniqueId].p2Choice = rpsValue;
-        socket.to(data.roomUniqueId).emit("p2Choice", {rpsValue: data.rpsValue});
+        socket.to(data.roomUniqueId).emit("p2Choice", { rpsValue: data.rpsValue });
         if (rooms[data.roomUniqueId].p1Choice != null) {
             declareWinner(data.roomUniqueId);
         }

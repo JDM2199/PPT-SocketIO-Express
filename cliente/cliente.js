@@ -13,7 +13,7 @@ function createGame() {
 // Función para unirse a una partida existente
 function joinGame() {
     roomUniqueId = document.getElementById('roomUniqueId').value;
-    socket.emit('joinGame', {roomUniqueId: roomUniqueId});
+    socket.emit('joinGame', { roomUniqueId: roomUniqueId });
 }
 
 // Escucha el evento "newGame" enviado por el servidor
@@ -26,9 +26,9 @@ socket.on("newGame", (data) => {
     copyButton.classList.add('btn', 'btn-primary', 'py-2', 'my-2');
     copyButton.innerText = 'Copiar Código';
     copyButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(roomUniqueId).then(function() {
+        navigator.clipboard.writeText(roomUniqueId).then(function () {
             console.log('Async: Copying to clipboard was successful!');
-        }, function(err) {
+        }, function (err) {
             console.error('Async: Could not copy text: ', err);
         });
     });
@@ -72,16 +72,20 @@ socket.on("result", (data) => {
     } else {
         winnerText = 'Es un empate';
     }
-    document.getElementById('opponentState').style.display = 'none'; 
+    document.getElementById('opponentState').style.display = 'none';
     document.getElementById('opponentButton').style.display = 'block';
     document.getElementById('winnerArea').innerHTML = winnerText;
+
+    setTimeout(() => {
+        location.reload();
+    }, 3000);
 });
 
 // Función para enviar la elección del jugador (Piedra, Papel, Tijera)
 function sendChoice(rpsValue) {
     const choiceEvent = player1 ? "p1Choice" : "p2Choice";
     socket.emit(choiceEvent, {
-        rpsValue: rpsValue, 
+        rpsValue: rpsValue,
         roomUniqueId: roomUniqueId
     });
 

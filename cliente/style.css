@@ -27,7 +27,8 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-button, input {
+button,
+input {
     border-radius: 8px;
     margin: 0.5rem 0;
 }
@@ -104,11 +105,12 @@ img:hover {
         padding: 1rem;
     }
 
- .title {
+    .title {
         font-size: 2rem;
-    } 
+    }
 
-    button, input {
+    button,
+    input {
         font-size: 0.9rem;
     }
 }
@@ -158,7 +160,7 @@ img:hover {
 
 .Tijera {
     color: transparent;
-    background: url(./assets/tijeraa.png);
+    background: url(./assets/tijera.png);
     background-position: center;
     width: 200px;
     height: 200px;
@@ -170,4 +172,3 @@ img:hover {
     letter-spacing: 1px;
     line-height: 2;
 }
-
